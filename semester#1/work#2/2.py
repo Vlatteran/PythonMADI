@@ -1,17 +1,9 @@
-def read_float_variable(variable_name):
-    while True:
-        variable_str = input(f"Введите рацианальное число {variable_name}: ")
-        if variable_str.replace(".", "").isdigit() and len(variable_str.split(".")) in (1, 2):
-            return float(variable_str)
-        else:
-            print("Введённое значение не является рациаональным числом")
-            continue
-
+from mylib import read_float_variable as read
 
 if __name__ == "__main__":
-    a = read_float_variable("a")
-    b = read_float_variable("b")
-    c = read_float_variable("c")
+    a = read("a")
+    b = read("b")
+    c = read("c")
 
     if c == 20:
         s = a * b
