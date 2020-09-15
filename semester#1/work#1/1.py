@@ -11,9 +11,8 @@ def read_float_variable(variable_name):
             continue
 
 
-m = read_float_variable("M")
-
 if __name__ == "__main__":
+    m = read_float_variable("M")
     while True:
         x = read_float_variable("X")
         if sin(x) == 0:
