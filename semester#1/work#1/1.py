@@ -1,10 +1,8 @@
 from math import sin
-
-
 from mylib import read_float_variable as read
 
 
-if __name__ == "__main__":
+def main():
     m = read("M")
     while True:
         x = read("X")
@@ -13,7 +11,6 @@ if __name__ == "__main__":
             continue
         else:
             break
-
     while True:
         b = read("B")
         if b == 0:
@@ -21,7 +18,10 @@ if __name__ == "__main__":
             continue
         else:
             break
-
     k = (x ** 2 * (m - b)) / sin(x)
     q = (k / x - m / b) * abs(k) ** 0.5
     print("K = " + str(k) + "; Q = " + str(q))
+
+
+if __name__ == "__main__":
+    main()
