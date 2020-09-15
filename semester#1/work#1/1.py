@@ -1,41 +1,35 @@
 from math import sin
 
-while True:
-    m_str = input("Введите M: ")
-    if m_str.isdigit():
-        m = int(m_str)
-        break
-    else:
-        print("Ввёдённое значение не является целым числом")
-        continue
 
-while True:
-    x_str = input("Введите x: ")
-    if x_str.isdigit():
-        x = int(x_str)
-    else:
-        print("Ввёдённое значение не является целым числом")
-        continue
-    if sin(x) == 0:
-        print("Ввёдённое значение x недопустимо")
-        continue
-    else:
-        break
+def read_float_variable(variable_name):
+    while True:
+        variable_str = input(f"Введите рацианальное число {variable_name}: ")
+        if variable_str.replace(".", "").isdigit() and len(variable_str.split(".")) in (1, 2):
+            return float(variable_str)
+        else:
+            print("Введённое значение не является рациаональным числом")
+            continue
 
-while True:
-    b_str = input("Введите B: ")
-    if b_str.isdigit():
-        b = int(b_str)
-    else:
-        print("Ввёдённое значение не является целым числом")
-        continue
-    if b == 0:
-        print("Ввёдённое значение B недопустимо")
-        continue
-    else:
-        break
 
-k = (x ** 2 * (m - b)) / sin(x)
-q = (k / x - m / b) * abs(k) ** 0.5
-print("K = " + str(k) + "; Q = " + str(q))
-print("lol")
+m = read_float_variable("M")
+
+if __name__ == "__main__":
+    while True:
+        x = read_float_variable("X")
+        if sin(x) == 0:
+            print("Ввёдённое значение x недопустимо")
+            continue
+        else:
+            break
+
+    while True:
+        b = read_float_variable("B")
+        if b == 0:
+            print("Ввёдённое значение B недопустимо")
+            continue
+        else:
+            break
+
+    k = (x ** 2 * (m - b)) / sin(x)
+    q = (k / x - m / b) * abs(k) ** 0.5
+    print("K = " + str(k) + "; Q = " + str(q))
