@@ -1,20 +1,13 @@
 from math import sin
 
 
-def read_float_variable(variable_name):
-    while True:
-        variable_str = input(f"Введите рацианальное число {variable_name}: ")
-        if variable_str.replace(".", "").isdigit() and len(variable_str.split(".")) in (1, 2):
-            return float(variable_str)
-        else:
-            print("Введённое значение не является рациаональным числом")
-            continue
+from mylib import read_float_variable as read
 
 
 if __name__ == "__main__":
-    m = read_float_variable("M")
+    m = read("M")
     while True:
-        x = read_float_variable("X")
+        x = read("X")
         if sin(x) == 0:
             print("Ввёдённое значение x недопустимо")
             continue
@@ -22,7 +15,7 @@ if __name__ == "__main__":
             break
 
     while True:
-        b = read_float_variable("B")
+        b = read("B")
         if b == 0:
             print("Ввёдённое значение B недопустимо")
             continue
