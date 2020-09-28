@@ -7,14 +7,14 @@ def main():
     while True:
         x = read("X")
         if sin(x) == 0:
-            print("Ввёдённое значение x недопустимо")
+            print("Недопустимое число (деление на 0)")
             continue
         else:
             break
     while True:
         b = read("B")
         if b == 0:
-            print("Ввёдённое значение B недопустимо")
+            print("Недопустимое число (деление на 0)")
             continue
         else:
             break
