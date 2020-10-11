@@ -8,6 +8,27 @@ def read_float_variable(variable_name):
             continue
 
 
+def read_value(type_of=int, msg="", error_msg="Incorrect type"):
+    result = None
+    while True:
+        try:
+            result = type_of(input(f"{msg}: "))
+        except ValueError:
+            print(error_msg)
+        if result is not None:
+            break
+    return result
+
+
+def read_list(list_name: str, list_size=0, type_of=int):
+    if list_size == 0:
+        list_size = read_value(type_of=int, msg=f"Введите длинну массива {list_name}")
+    result = []
+    for i in range(list_size):
+        result.append(read_value(type_of=int, msg=f"{list_name}[{i}]"))
+    return result
+
+
 def binary_search(array, element, start=0, end=0):
     if end == 0:
         end = len(array) - 1
